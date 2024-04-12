@@ -22,14 +22,14 @@ grounding_dino_model = Model(model_config_path=GROUNDING_DINO_CONFIG_PATH, model
 
 # Building MobileSAM predictor
 # checkpoint is downloaded from https://huggingface.co/spaces/yunyangx/EfficientSAM/tree/main
-EFFICIENT_SAM_CHECHPOINT_PATH = "./EfficientSAM/efficientsam_s_gpu.jit"
+EFFICIENT_SAM_CHECHPOINT_PATH = "./efficientsam_s_gpu.jit"
 efficientsam = torch.jit.load(EFFICIENT_SAM_CHECHPOINT_PATH)
 
 
 # Predict classes and hyper-param for GroundingDINO
 # SOURCE_IMAGE_PATH = "./EfficientSAM/LightHQSAM/example_light_hqsam.png"
-SOURCE_IMAGE_PATH = "/home/user/HKUra/photos/sciencepark/6.png"
-CLASSES = ["signboard"]  # ["pillar", "snowman", "white figure"]
+SOURCE_IMAGE_PATH = ""
+CLASSES = ["signboard"]  # 
 BOX_THRESHOLD = 0.1
 TEXT_THRESHOLD = 0.1
 NMS_THRESHOLD = 0.8
